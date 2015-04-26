@@ -80,7 +80,7 @@ eclipse j2ee版本貌似有了maven插件，直接配置即可
 配置maven安装路径
 
 windows-preferences
-![windows-preferences](http://b.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=f1df2017ec24b899da3c793d5e3d6ca8/1e30e924b899a90195ef512118950a7b0308f5cb.jpg?referer=0e2d44ec0f46f21f90236a6333c9&x=.jpg)
+![windows-preferences](http://f.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=d61b7ff667d9f2d3241124ea99d7fb2e/0bd162d9f2d3572cbc30dccb8f13632763d0c3d3.jpg?referer=46176f6b540fd9f9f90061592db1&x=.jpg)
 
 配置设置文件路径
 ![配置设置文件路径](http://d.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=b21e7a4a50fbb2fb302b58177f715199/3c6d55fbb2fb431686d2086d25a4462308f7d3dc.jpg?referer=5df07dd43f87e9501b00c75c1db2&x=.jpg)
