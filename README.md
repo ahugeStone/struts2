@@ -80,21 +80,21 @@ eclipse j2ee版本貌似有了maven插件，直接配置即可
 配置maven安装路径
 
 windows-preferences
-![windows-preferences](http://f.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=d61b7ff667d9f2d3241124ea99d7fb2e/0bd162d9f2d3572cbc30dccb8f13632763d0c3d3.jpg?referer=46176f6b540fd9f9f90061592db1&x=.jpg)
+![windows-preferences](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426205106.png?raw=true)
 
 配置设置文件路径
-![配置设置文件路径](http://d.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=b21e7a4a50fbb2fb302b58177f715199/3c6d55fbb2fb431686d2086d25a4462308f7d3dc.jpg?referer=5df07dd43f87e9501b00c75c1db2&x=.jpg)
+![配置设置文件路径](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426205641.png?raw=true)
 
 ### 2.3 eclipse的maven工程
 
 ####新建工程
 file-new-maven project
 
-![](http://f.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=c22a9d307a3e6709ba0045fa0bfcee00/c8177f3e6709c93d15636fe09a3df8dcd1005417.jpg?referer=5056b2ea7e899e5121990f24940d&x=.jpg)
+![](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426210231.png?raw=true)
 
-![](http://f.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=4401f86cd41373f0f13f6f9a94343ac6/ac4bd11373f08202cfedf1284efbfbedab641bad.jpg?referer=1243f4ac82d6277fb00507086564&x=.jpg)
+![](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426210252.png?raw=true)
 
-![](http://g.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=afbb2b196209c93d03f20ef2af0689e1/7e3e6709c93d70cf5d6bcb1afddcd100baa12b17.jpg?referer=80612fae9b510fb3210e42a7950d&x=.jpg)
+![](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426210358.png?raw=true)
 
 #### 修改pom.xml增加各种依赖
 
@@ -145,13 +145,13 @@ M2_HOME=D:\Apps\apache-maven-3.3.1
 然后在Window->Preference->Java->Installed JREs->Edit
 在Default VM arguments中设置
 -Dmaven.multiModuleProjectDirectory=$M2_HOME
-> ![](http://d.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=8bd76a17ec24b899da3c793d5e3d6ca8/1e30e924b899a901efe71b2118950a7b0308f5d3.jpg?referer=74250eec0f46f21f90236a6333b1&x=.jpg)
+> ![](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426212457.png?raw=true)
 > 出自:[http://blog.csdn.net/s20082043/article/details/45194721](http://blog.csdn.net/s20082043/article/details/45194721)
 
 #### 将工程部署到tomcat中
 
 新建service，就不截图了，注意先不要选择工程，直接finish，双击新生成的service，修改Deploy path配置路径如下。
-![](http://f.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=d61b7ff667d9f2d3241124ea99d7fb2e/0bd162d9f2d3572cbc30dccb8f13632763d0c3d3.jpg?referer=46176f6b540fd9f9f90061592db1&x=.jpg)
+![](https://github.com/ahugeStone/pictures/blob/master/QQ%E6%88%AA%E5%9B%BE20150426212040.png?raw=true)
 
 如果Deploy path是灰色的不可更改，则删除该service下面的服务，然后clear，再打开。
 
