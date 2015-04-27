@@ -133,6 +133,13 @@ file-new-maven project
 			<classifier>jdk15</classifier>
 			<version>2.4</version>
 		</dependency>
+		<!-- javax.servlet -->
+		<dependency> 
+		   <groupId>javax.servlet</groupId> 
+		   <artifactId>servlet-api</artifactId> 
+		   <version>2.5</version> 
+		   <scope>provided</scope> 
+		</dependency> 
 ```
 保存后，如果是第一次执行，后台就会下载各种依赖包到2.1配置的路径下，等待时间视网速而定。
 然后右键工程 run as - maven install
@@ -230,5 +237,29 @@ struts.xml
 待续
 ### 2.6 ibatis
 待续
+### 2.7 开发笔记
+#### 在Action中获取request并格式化参数
+对于如下格式报文
+
+```javascript
+{"roomlist":"curLoginUserInfo","memberlist":"{\"room\":\"111\",\"member\":\"222\"}"}
+```
+获取request对象
+
+```java
+HttpServletRequest request = ServletActionContext.getRequest();
+```
+
+格式化并获取对象
+
+```java
+String reqjsonStr = request.getParameter("json");
+JSONObject reqjsonObj = JSONObject.fromObject(reqjsonStr);	
+JSONObject reqParamsObj = JSONObject.fromObject(reqjsonObj.getString("params"));
+...
+String room = reqParamsObj.getString("room");
+String member= reqParamsObj.getString("member");
+```
+
 
 > 来自我的 [StackEdit](https://stackedit.io/).
