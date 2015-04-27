@@ -2,7 +2,8 @@ package com.hs.json.action;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts2.ServletActionContext;
 import net.sf.json.JSONObject;
 
 import com.opensymphony.xwork2.Action;
@@ -13,10 +14,18 @@ public class HelloWorldJsonAction implements Action {
 	private String result;
 
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String reqjsonStr = request.getParameter("json");
+		JSONObject reqjsonObj = JSONObject.fromObject(reqjsonStr);
+		
+		System.out.println("method:"+reqjsonObj.getString("method"));
+		
+		JSONObject reqParamsObj = JSONObject.fromObject(reqjsonObj.getString("params"));
+		
 		Map<String, String> tmp = new HashMap<String, String>();
-		tmp.put("roomlist", "room");
-		tmp.put("memberlist", "member");
+		
+		tmp.put("roomlist", reqParamsObj.getString("room"));
+		tmp.put("memberlist", reqParamsObj.getString("member"));
 		JSONObject jo = JSONObject.fromObject(tmp);
 		this.result = jo.toString();
 		this.JSONResult = tmp;
