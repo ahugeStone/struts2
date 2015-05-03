@@ -233,11 +233,83 @@ struts.xml
 ```json
 {"roomlist":"room","memberlist":"member"}
 ```
-### 2.5 spring
+### 2.5 log4j
+pom.xml文件中添加log4j的包依赖
+```xml
+<dependency>
+	<groupId>log4j</groupId>
+	<artifactId>log4j</artifactId>
+	<version>1.2.17</version>
+</dependency>
+```
+在/工程名/src/main/resources/创建log4j.xml文件如下：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>     
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">     
+        
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/' >     
+        
+    <appender name="myConsole" class="org.apache.log4j.ConsoleAppender">     
+        <layout class="org.apache.log4j.PatternLayout">     
+            <param name="ConversionPattern"        
+                value="[%d{dd HH:mm:ss,SSS\} %-5p] [%t] %c{2\} - %m%n" />     
+        </layout>     
+        <!--过滤器设置输出的级别-->     
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">     
+            <param name="levelMin" value="debug" />     
+            <param name="levelMax" value="warn" />     
+            <param name="AcceptOnMatch" value="true" />     
+        </filter>     
+    </appender>     
+     
+    <appender name="myFile" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="D:/workspace/logs/output.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="true" />     
+        <param name="MaxBackupIndex" value="10" />     
+        <layout class="org.apache.log4j.PatternLayout">     
+            <param name="ConversionPattern" value="%p (%c:%L)- %m%n" />     
+        </layout>     
+    </appender>     
+       
+    <appender name="activexAppender" class="org.apache.log4j.DailyRollingFileAppender">     
+        <param name="File" value="D:/workspace/logs/activex.log" />       
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />       
+        <layout class="org.apache.log4j.PatternLayout">     
+         <param name="ConversionPattern"       
+            value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />     
+        </layout>       
+    </appender>     
+        
+    <!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制-->     
+    <logger name="com.runway.bssp.activeXdemo" additivity="false">     
+        <priority value ="info"/>       
+        <appender-ref ref="activexAppender" />       
+    </logger>     
+     
+    <!-- 根logger的设置-->     
+    <root>     
+        <priority value ="debug"/>     
+        <appender-ref ref="myConsole"/>     
+        <appender-ref ref="myFile"/>        
+    </root>     
+</log4j:configuration>
+```
+* 输出方式appender一般有5种：
+org.apache.log4j.RollingFileAppender(滚动文件，自动记录最新日志)
+org.apache.log4j.ConsoleAppender (控制台)
+org.apache.log4j.FileAppender (文件)
+org.apache.log4j.DailyRollingFileAppender (每天产生一个日志文件)
+org.apache.log4j.WriterAppender (将日志信息以流格式发送到任意指定的地方) 
+* 日记记录的优先级priority，优先级由高到低分为
+OFF ,FATAL ,ERROR ,WARN ,INFO ,DEBUG ,ALL。
+Log4j建议只使用FATAL ,ERROR ,WARN ,INFO ,DEBUG这五个级别，当值为"off"时表示没有任何日志信息被输出
+
+### 2.6 spring
 待续
-### 2.6 ibatis
+### 2.7 ibatis
 待续
-### 2.7 开发笔记
+### 2.8 开发笔记
 #### 在Action中获取request并格式化参数
 对于如下格式报文
 
